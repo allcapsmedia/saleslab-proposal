@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sales Lab with Eric Giglione | Production Proposal | ALLCAPS MEDIA</title>
+<meta name="description" content="A 3-tier production proposal for launching The Sales Lab with Eric Giglione, an authority-building content platform powered by ALLCAPS MEDIA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-base: #08080C;
+  --bg-elevated: #0F0F16;
+  --bg-card: #13131C;
+  --bg-card-hover: #181823;
+  --border-subtle: #1F1F2C;
+  --border-default: #2A2A3A;
+  --border-bright: #3A3A50;
+  --text-primary: #F5F5F8;
+  --text-secondary: #A8A8B5;
+  --text-muted: #6B6B7A;
+  --accent-red: #00E676;
+  --accent-red-bright: #39FF14;
+  --accent-orange: #00FFA3;
+  --accent-gold: #C6FF00;
+  --accent-emerald: #39FF14;
+  --gradient-monster: linear-gradient(135deg, #00E676 0%, #39FF14 100%);
+  --gradient-gold: linear-gradient(135deg, #C6FF00 0%, #39FF14 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(0,230,118,0.08) 0%, rgba(8,8,12,0) 100%);
+  --shadow-glow: 0 0 60px rgba(57,255,20,0.18);
+  --shadow-card: 0 24px 48px -12px rgba(0,0,0,0.4);
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ BACKGROUND TEXTURE ============ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,230,118,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 30%, rgba(57,255,20,0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main { position: relative; z-index: 1; }
+
+/* ============ NAV ============ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  background: rgba(8,8,12,0.7);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1rem;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-monster);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 32px 64px;
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  padding: 8px 14px;
+  border: 1px solid rgba(57,255,20,0.3);
+  background: rgba(57,255,20,0.06);
+  border-radius: 100px;
+  margin-bottom: 32px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red-bright);
+  box-shadow: 0 0 12px var(--accent-red-bright);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  max-width: 1100px;
+  margin-bottom: 32px;
+}
+
+.hero h1 .accent {
+  background: var(--gradient-monster);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-meta strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.hero-lede {
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin-bottom: 16px;
+}
+
+.hero-lede strong { color: var(--text-primary); font-weight: 500; }
+
+/* ============ SECTION HEADERS ============ */
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 32px;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent-orange);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.section-intro {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  line-height: 1.65;
+  margin-bottom: 56px;
+}
+
+/* ============ VISION GRID ============ */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .vision-grid { grid-template-columns: 1fr; }
+}
+
+.vision-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.vision-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+}
+
+.vision-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1;
+  background: var(--gradient-monster);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 24px;
+}
+
+.vision-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+
+.vision-card p {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* ============ TIER COMPARISON STRIP ============ */
+.tier-strip {
+  margin: 64px auto 0;
+  max-width: 1280px;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .tier-strip { grid-template-columns: 1fr; }
+}
+
+.strip-card {
+  padding: 24px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  position: relative;
+}
+
+.strip-card .label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.strip-card .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+
+.strip-card .price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent-orange);
+}
+
+.strip-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(0,230,118,0.08) 0%, var(--bg-elevated) 100%); }
+.strip-card.featured .price { color: var(--accent-red-bright); }
+.strip-card.gold { border-color: var(--accent-gold); }
+.strip-card.gold .price { color: var(--accent-gold); }
+
+/* ============ TIERS SECTION ============ */
+.tiers-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .tiers-wrapper { grid-template-columns: 1fr; }
+}
+
+.tier {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 40px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.tier:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-bright);
+}
+
+.tier.featured {
+  border-color: var(--accent-red);
+  background: linear-gradient(180deg, rgba(0,230,118,0.06) 0%, var(--bg-card) 35%);
+  box-shadow: var(--shadow-glow);
+}
+
+.tier.gold {
+  border-color: var(--accent-gold);
+  background: linear-gradient(180deg, rgba(198,255,0,0.05) 0%, var(--bg-card) 35%);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-monster);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.gold-badge {
+  background: var(--gradient-gold);
+}
+
+.tier-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.tier.featured .tier-tag { color: var(--accent-red-bright); }
+.tier.gold .tier-tag { color: var(--accent-gold); }
+
+.tier-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.tier-tagline {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  min-height: 50px;
+}
+
+.tier-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tier-price .currency {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.tier-price .amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.25rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.tier-price .period {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+.tier-setup {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tier-setup strong {
+  color: var(--accent-orange);
+  font-weight: 500;
+}
+
+.includes-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.tier-features {
+  list-style: none;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tier-features li.feat-strong {
+  color: var(--text-primary);
+}
+
+.feat-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: rgba(0,230,118,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feat-icon::after {
+  content: '';
+  width: 7px;
+  height: 4px;
+  border-left: 1.5px solid var(--accent-red-bright);
+  border-bottom: 1.5px solid var(--accent-red-bright);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.tier.gold .feat-icon { background: rgba(198,255,0,0.12); }
+.tier.gold .feat-icon::after { border-color: var(--accent-gold); }
+
+.feat-divider {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  padding: 16px 0 8px;
+  display: block;
+}
+
+.tier-stats {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.tier-stats-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tier-stats-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  background: var(--gradient-monster);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tier.gold .tier-stats-value {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============ CONTENT OUTPUT TABLE ============ */
+.output-table {
+  margin-top: 96px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.output-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.5fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(130px, 1fr);
+  border-bottom: 1px solid var(--border-subtle);
+  min-width: 720px;
+}
+
+.output-row:last-child { border-bottom: none; }
+
+.output-row.header {
+  background: var(--bg-elevated);
+}
+
+.output-cell {
+  padding: 18px 24px;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+}
+
+.output-row.header .output-cell {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.output-cell.feat-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-family: var(--font-display);
+}
+
+.output-cell.value {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  border-left: 1px solid var(--border-subtle);
+  justify-content: center;
+}
+
+.output-cell.value.yes {
+  color: var(--accent-emerald);
+  font-weight: 500;
+}
+
+.output-cell.value.no {
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .output-cell { padding: 14px 16px; font-size: 0.875rem; }
+  .output-cell.value { font-size: 0.8125rem; }
+}
+
+/* ============ ADDONS ============ */
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .addons-grid { grid-template-columns: 1fr; }
+}
+
+.addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 0.3s;
+}
+
+.addon:hover { border-color: var(--border-bright); }
+
+.addon-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.addon-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.addon-price {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--accent-orange);
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+/* ============ TIMELINE ============ */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.timeline-step {
+  padding: 32px 24px;
+  border-left: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.timeline-step:first-child { border-left: none; }
+
+@media (max-width: 900px) {
+  .timeline-step {
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+  }
+  .timeline-step:first-child { border-top: none; padding-top: 0; }
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: -6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 16px var(--accent-red);
+}
+
+.timeline-step:first-child::before { left: 0; }
+
+@media (max-width: 900px) {
+  .timeline-step::before { left: 0; top: -5px; }
+  .timeline-step:first-child::before { top: 0; }
+}
+
+.timeline-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  margin-bottom: 12px;
+}
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ============ SAMPLE SCRIPT ============ */
+.script-card {
+  background: linear-gradient(180deg, rgba(0,230,118,0.05) 0%, var(--bg-card) 60%, var(--bg-card) 100%);
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.script-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-monster);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .script-card { padding: 32px 24px; }
+}
+
+.script-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-red-bright);
+  padding: 6px 14px;
+  border: 1px solid rgba(57,255,20,0.3);
+  background: rgba(57,255,20,0.05);
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.script-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red-bright);
+  box-shadow: 0 0 8px var(--accent-red-bright);
+}
+
+.script-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.script-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 36px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.script-meta span strong {
+  color: var(--accent-red-bright);
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.script-body {
+  max-width: 780px;
+  position: relative;
+}
+
+.script-body::before {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--accent-red);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.script-body p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.script-body p:last-child {
+  margin-bottom: 0;
+}
+
+.script-body p strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.script-signoff {
+  font-family: var(--font-display) !important;
+  font-style: italic;
+  font-size: 1.25rem !important;
+  color: var(--accent-red-bright) !important;
+  margin-top: 32px !important;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ============ FINAL CTA ============ */
+.final-cta {
+  margin-top: 32px;
+  padding: 64px 48px;
+  background: linear-gradient(135deg, rgba(0,230,118,0.12) 0%, rgba(57,255,20,0.06) 100%);
+  border: 1px solid rgba(0,230,118,0.25);
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,230,118,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta-content { position: relative; z-index: 1; }
+
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.final-cta p {
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradient-monster);
+  color: white;
+  box-shadow: 0 8px 24px rgba(0,230,118,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,230,118,0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-bright);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card);
+  transform: translateY(-2px);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 48px 32px 32px;
+  margin-top: 96px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.footer-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1, .hero-lede, .hero-meta, .eyebrow {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-lede { animation-delay: 0.15s; opacity: 0; }
+.hero-meta { animation-delay: 0.3s; opacity: 0; }
+
+.tier { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
+.tier:nth-child(1) { animation-delay: 0.1s; }
+.tier:nth-child(2) { animation-delay: 0.2s; }
+.tier:nth-child(3) { animation-delay: 0.3s; }
+
+/* ============ HIGHLIGHT TAG INSIDE FEATURES ============ */
+.feat-tag {
+  display: inline-block;
+  background: rgba(0,230,118,0.12);
+  color: var(--accent-red-bright);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.tier.gold .feat-tag {
+  background: rgba(198,255,0,0.12);
+  color: var(--accent-gold);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand-mark">
+      <div class="brand-icon">SL</div>
+      <span>The Sales Lab Proposal</span>
+    </div>
+    <div class="nav-links">
+      <a href="#vision">Vision</a>
+      <a href="#tiers">Packages</a>
+      <a href="#output">Output</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#sample">Sample</a>
+    </div>
+    <span class="nav-cta">Prepared for Eric Giglione</span>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow"><span class="eyebrow-dot"></span>Production Proposal · Confidential</span>
+  <h1>The Sales Lab <br><span class="accent">with Eric Giglione</span></h1>
+  <p class="hero-lede"><strong>A 3 short video per week authority platform</strong> built to position Eric as the trusted AI voice for sales leaders, executives, and entrepreneurs, and convert that authority into Salesmonster.AI affiliates and demos.</p>
+  <div class="hero-meta">
+    <span>Prepared by <strong>ALLCAPS MEDIA</strong></span>
+    <span>For <strong>Eric Giglione · Salesmonster.AI</strong></span>
+    <span>Three Tiers · One Outcome</span>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="section-label">01 · The Vision</div>
+  <h2 class="section-title">A show that builds the man, the brand, and the pipeline.</h2>
+  <p class="section-intro">The goal is not video views. The goal is positioning Eric as the most credible voice in AI for sales, building a content engine that earns audience trust, and converting that trust into Salesmonster.AI affiliate signups and demos. Every deliverable in this proposal serves that outcome.</p>
+
+  <div class="vision-grid">
+    <div class="vision-card">
+      <div class="vision-num">01</div>
+      <h3>Educate. Equip. Inspire.</h3>
+      <p>Three weekly short form videos that decode the AI landscape for older operators. News, products, and applications, filtered through Eric's 40 plus years of sales and business experience and distributed across every short form platform.</p>
+    </div>
+    <div class="vision-card">
+      <div class="vision-num">02</div>
+      <h3>The Authority Position</h3>
+      <p>Eric is not just an AI commentator. He is the seasoned operator translating AI for the boardroom. The Sales Lab makes him the bridge between the new tools and the people with the budget to buy them.</p>
+    </div>
+    <div class="vision-card">
+      <div class="vision-num">03</div>
+      <h3>The Affiliate Engine</h3>
+      <p>Every episode points to Salesmonster.AI. Higher tiers add the funnel, email, and outreach engine that converts viewers into product trials and affiliate sellers without sounding like a commercial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers">
+  <div class="section-label">02 · The Packages</div>
+  <h2 class="section-title">Three tiers. One trajectory.</h2>
+  <p class="section-intro">Each tier builds on the last. Start with the show, layer on the marketing engine, then unlock the full notoriety and recruitment system. Recommended starting point in bold below.</p>
+
+  <div class="tiers-wrapper">
+
+    <!-- TIER 1 -->
+    <div class="tier">
+      <div class="tier-tag">Tier 01 · Production</div>
+      <h3 class="tier-name">The Showrunner</h3>
+      <p class="tier-tagline">The foundation. Three short videos a week, built for reach across every short form platform.</p>
+      <div class="tier-price">
+        <span class="currency">$</span>
+        <span class="amount">945</span>
+        <span class="period">/ month</span>
+      </div>
+
+
+      <div class="includes-label">What you get</div>
+      <ul class="tier-features">
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>3 short form Sales Lab videos</strong> edited and delivered per week</span></li>
+        <li><span class="feat-icon"></span><span>Custom show branding package: intro, outro, lower thirds, on screen graphics</span></li>
+        <li><span class="feat-icon"></span><span>Custom cover frame design for every video</span></li>
+        <li><span class="feat-icon"></span><span>Burned in captions and dynamic subtitles</span></li>
+        <li><span class="feat-icon"></span><span>SEO optimized titles, hooks, and descriptions</span></li>
+        <li><span class="feat-icon"></span><span>B roll, stock footage, and music licensing</span></li>
+        <li><span class="feat-icon"></span><span>Audio cleanup and color grading</span></li>
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Multi platform distribution:</strong> YouTube Shorts, Instagram Reels, TikTok, LinkedIn, and Facebook</span></li>
+        <li><span class="feat-icon"></span><span>Topic angles and starter prompts each week</span></li>
+        <li><span class="feat-icon"></span><span>Bi weekly 30 minute review call</span></li>
+      </ul>
+
+      <div class="tier-stats">
+        <div class="tier-stats-label">Weekly Output</div>
+        <div class="tier-stats-value">3 short videos</div>
+      </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="tier featured">
+      <div class="popular-badge">Recommended</div>
+      <div class="tier-tag">Tier 02 · Production + Reach</div>
+      <h3 class="tier-name">The Amplifier</h3>
+      <p class="tier-tagline">The foundation, multiplied. Full research, scripts, and a long form podcast on top of the short video engine.</p>
+      <div class="tier-price">
+        <span class="currency">$</span>
+        <span class="amount">2,150</span>
+        <span class="period">/ month</span>
+      </div>
+
+
+      <div class="includes-label">Everything in Showrunner, plus</div>
+      <ul class="tier-features">
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Full topic research and deep dive briefs</strong> done by our team<span class="feat-tag">NEW</span></span></li>
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Full scripts written for every short video.</strong> Eric shows up, reads, records.<span class="feat-tag">NEW</span></span></li>
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Bi weekly long form podcast.</strong> 2 episodes per month.</span></li>
+        <li><span class="feat-icon"></span><span>2 additional short clips per week pulled from the podcast. <strong>8 per month.</strong></span></li>
+        <li><span class="feat-icon"></span><span>Podcast distributed to Spotify, Apple Podcasts, and YouTube</span></li>
+        <li><span class="feat-icon"></span><span>Weekly email newsletter to the audience</span></li>
+        <li><span class="feat-icon"></span><span>Episode show notes published as SEO blog posts</span></li>
+        <li><span class="feat-icon"></span><span>Comment management on YouTube and LinkedIn (first 48 hours)</span></li>
+        <li><span class="feat-icon"></span><span>Weekly 60 minute strategy call</span></li>
+        <li><span class="feat-icon"></span><span>Real performance reporting dashboard</span></li>
+      </ul>
+
+      <div class="tier-stats">
+        <div class="tier-stats-label">Weekly Output (podcast weeks)</div>
+        <div class="tier-stats-value">5 videos + podcast</div>
+      </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="tier gold">
+      <div class="popular-badge gold-badge">Full Build</div>
+      <div class="tier-tag">Tier 03 · The Authority Engine</div>
+      <h3 class="tier-name">The Authority</h3>
+      <p class="tier-tagline">The full notoriety and affiliate recruitment machine. Done for you, top to bottom.</p>
+      <div class="tier-price">
+        <span class="currency">$</span>
+        <span class="amount">3,350</span>
+        <span class="period">/ month</span>
+      </div>
+
+
+      <div class="includes-label">Everything in Amplifier, plus</div>
+      <ul class="tier-features">
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Weekly long form podcast.</strong> 4 episodes per month.<span class="feat-tag">UPGRADE</span></span></li>
+        <li><span class="feat-icon"></span><span>3 short clips per week from the podcast. <strong>12 per month.</strong></span></li>
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>Custom website hub</strong> built from scratch (TheSalesLab.ai or chosen domain)</span></li>
+        <li class="feat-strong"><span class="feat-icon"></span><span><strong>FNNL.io affiliate recruitment funnel</strong> integrated end to end</span></li>
+        <li><span class="feat-icon"></span><span>Lead magnet creation, 1 per quarter (eBook, guide, swipe file, or mini course)</span></li>
+        <li><span class="feat-icon"></span><span>Email automation: welcome, nurture, affiliate pitch, re engagement</span></li>
+        <li><span class="feat-icon"></span><span>LinkedIn outreach automation powered by autom8d.ai</span></li>
+        <li><span class="feat-icon"></span><span>Podcast guest booking outreach. 3 to 5 placements per quarter.</span></li>
+        <li><span class="feat-icon"></span><span>Full community and comment management across platforms</span></li>
+        <li><span class="feat-icon"></span><span>Two strategy sessions per week with Peter Reichert</span></li>
+        <li><span class="feat-icon"></span><span>Quarterly brand and performance review</span></li>
+      </ul>
+
+      <div class="tier-stats">
+        <div class="tier-stats-label">Weekly Output</div>
+        <div class="tier-stats-value">6 videos + podcast</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUTPUT COMPARISON -->
+<section id="output">
+  <div class="section-label">03 · Side By Side</div>
+  <h2 class="section-title">What you actually get, by tier.</h2>
+  <p class="section-intro">A clean comparison of every deliverable across the three packages, so the choice is obvious.</p>
+
+  <div class="output-table">
+    <div class="output-row header">
+      <div class="output-cell">Deliverable</div>
+      <div class="output-cell value">Showrunner</div>
+      <div class="output-cell value">Amplifier</div>
+      <div class="output-cell value">Authority</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">3 weekly short form videos</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Show branding package</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Distribution to Shorts, Reels, TikTok, LinkedIn, FB</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Full topic research and deep briefs</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Full scripts written for every video</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Additional clips from podcast / week</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value">2 (8/mo)</div>
+      <div class="output-cell value">3 (12/mo)</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Long form podcast</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value">Bi weekly</div>
+      <div class="output-cell value">Weekly</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Spotify and Apple Podcasts distribution</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Weekly email newsletter</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">SEO blog posts from episodes</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Comment management</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value">First 48 hrs</div>
+      <div class="output-cell value">Full</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Custom website hub</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">FNNL.io affiliate recruitment funnel</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Lead magnet creation (per quarter)</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Email automation sequences</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">LinkedIn outreach (autom8d.ai)</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value yes">Yes</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Podcast guest booking</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value no">—</div>
+      <div class="output-cell value">3-5 / qtr</div>
+    </div>
+    <div class="output-row">
+      <div class="output-cell feat-name">Strategy call cadence</div>
+      <div class="output-cell value">Bi weekly</div>
+      <div class="output-cell value">Weekly</div>
+      <div class="output-cell value">2x weekly + Qtr</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-label">04 · How We Launch</div>
+  <h2 class="section-title">Four weeks from green light to first episode live.</h2>
+  <p class="section-intro">Setup runs in parallel across creative, production, and infrastructure. Eric's only obligation in week one is the kickoff call and brand questionnaire.</p>
+
+  <div class="timeline">
+    <div class="timeline-step">
+      <div class="timeline-num">Week 01</div>
+      <h4 class="timeline-title">Kickoff & Brand</h4>
+      <p class="timeline-desc">Discovery call. Brand questionnaire. Visual direction approved. Show branding designed: intro, outro, lower thirds, thumbnails, color system.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-num">Week 02</div>
+      <h4 class="timeline-title">Content Engine</h4>
+      <p class="timeline-desc">Topic bank built. First 4 episode briefs and scripts (Tier 2+) drafted. Recording setup confirmed. Tier 3: domain, hosting, FNNL funnel structure scoped.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-num">Week 03</div>
+      <h4 class="timeline-title">First Recordings</h4>
+      <p class="timeline-desc">Eric records first batch. Editing begins. Channels created and optimized. Tier 3: website built, email sequences drafted, autom8d.ai outreach configured.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-num">Week 04</div>
+      <h4 class="timeline-title">Launch Live</h4>
+      <p class="timeline-desc">First episode live. Newsletter goes out. Funnel goes live (Tier 3). Reporting dashboard shared with Eric. Production rhythm officially in motion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE SCRIPT -->
+<section id="sample">
+  <div class="section-label">05 · Sample Episode</div>
+  <h2 class="section-title">What an episode actually sounds like.</h2>
+  <p class="section-intro">Not a mockup. This is a real two minute script we wrote this week, pulled from live AI business news. Eric in lab coat, green screen AI lab background. Read it out loud and picture yourself on camera.</p>
+
+  <div class="script-card">
+    <span class="script-badge">Episode 001 · Transcript</span>
+    <h3 class="script-title">Big Tech Just Quietly Replaced 70,000 Jobs With AI. Here's What They're Buying Instead.</h3>
+    <div class="script-meta">
+      <span>Runtime <strong>2:00</strong></span>
+      <span>Host <strong>Giggs</strong></span>
+      <span>Format <strong>Short Form</strong></span>
+      <span>Set <strong>Green Screen Lab</strong></span>
+    </div>
+
+    <div class="script-body">
+      <p>PayPal just cut twenty percent of their workforce. Coinbase, fourteen percent. Salesforce's CEO literally said, and I quote, <strong>"I need less heads."</strong> And we are one quarter into the year.</p>
+
+      <p>Welcome to The Sales Lab. They call me Giggs. Today's experiment, the quietest revolution happening in business right now, and what every sales leader needs to know about it.</p>
+
+      <p>Through April, big tech alone has cut north of <strong>seventy thousand jobs.</strong> Oracle. Amazon. Meta. Microsoft. Cloudflare just announced internal AI usage jumped six hundred percent in three months, then cut twenty percent of their company the same week. Bloomberg projects half a million American jobs disappear by year end. <strong>That is not a recession. That is a replacement.</strong></p>
+
+      <p>Meanwhile, the same companies firing humans are writing the biggest checks in history. Google just closed its acquisition of Wiz. Amazon dropped fifty billion into OpenAI. The four hyperscalers are spending <strong>seven hundred twenty-five billion dollars</strong> on AI this year. That is a seventy-seven percent jump over last year. They are not cutting to save money. They are cutting to redirect it.</p>
+
+      <p>Here is what nobody on CNBC is telling you. The companies winning right now are not the ones with the biggest AI budgets. They are the ones whose sales teams already know how to use AI. Salesforce did not cut four thousand jobs because AI is dangerous. They cut them because their best reps are now doing three times the volume with the right tools. <strong>The middle of the bell curve is what got eliminated.</strong></p>
+
+      <p>If your sales team is not training with AI by now, you are already behind. That is exactly what we built Salesmonster.AI to fix. Link below. Try it with your team. Next experiment drops Friday.</p>
+
+      <p class="script-signoff">Giggs out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="final-cta">
+    <div class="final-cta-content">
+      <h2>Let's get The Sales Lab on the air.</h2>
+      <p>Reply with the tier you want and we will send the contract and onboarding documents within 24 hours. Production can start the moment kickoff is scheduled.</p>
+      <div class="cta-row">
+        <a href="mailto:peter@allcapsmedia.com?subject=The%20Sales%20Lab%20-%20Tier%20Selection" class="btn btn-primary">Approve Package & Start</a>
+        <a href="mailto:peter@allcapsmedia.com?subject=The%20Sales%20Lab%20-%20Questions" class="btn btn-secondary">Schedule a Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-icon">SL</div>
+      <span>The Sales Lab Proposal</span>
+    </div>
+    <div class="footer-meta">Designed and Produced by ALLCAPS MEDIA · 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
